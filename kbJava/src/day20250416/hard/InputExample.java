@@ -1,7 +1,7 @@
 package day20250416.hard;
 
 public class InputExample {
-    public static void main(String[] args) {gi
+    public static void main(String[] args) {
         String name = Input.read("이름: ");
         System.out.println("입력값: " + name);
 
