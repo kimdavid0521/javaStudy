@@ -14,7 +14,7 @@ public class LinkedListExample {
         list.add(new Board("제목3", "내용3", "글쓴이3"));
         list.add(new Board("제목4", "내용4", "글쓴이4"));
         list.add(new Board("제목5", "내용5", "글쓴이5"));
-        
+
         System.out.println("총 객체 수: " + list.size());
         System.out.println();
 
