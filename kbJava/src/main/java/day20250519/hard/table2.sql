@@ -91,3 +91,28 @@ FROM
         JOIN salaries s ON e.emp_no = s.emp_no
 WHERE
     t.from_date <= s.to_date AND s.from_date <= t.to_date;
+
+
+-- 현재 재직자만 출력
+SELECT *
+FROM EMPLOYEES_INFO
+WHERE t_to = '9999-01-01' AND s_to = '9999-01-01';
+
+
+-- emp_dept_info 뷰 작성
+CREATE VIEW EMP_DEPT_INFO AS
+SELECT
+    de.emp_no,
+    de.dept_no,
+    d.dept_name,
+    de.from_date,
+    de.to_date
+FROM
+    dept_emp de
+        JOIN departments d ON de.dept_no = d.dept_no;
+
+
+-- emp_dept_info로 현재 재직자의 부서 정보를 출력
+SELECT emp_no, dept_no, dept_name, from_date, to_date
+FROM EMP_DEPT_INFO
+WHERE to_date = '9999-01-01';
